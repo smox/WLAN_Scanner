@@ -39,8 +39,9 @@ done
 
 for((i=0;i<$COUNT;i++))
 do
-    STRENGTH=$(($STRENGTH+$(iwconfig $WLAN_ADAPTER | grep 'Signal level='|awk -F'=' '{ print $2 }' | awk -F'/' '{ print $1 }')));
-    echo "Meassurement: "$((i+1));
+    TMP_STRENGTH=$(iwconfig $WLAN_ADAPTER | grep 'Signal level='|awk -F'=' '{ print $2 }' | awk -F'/' '{ print $1 }');
+    STRENGTH=$(($STRENGTH+TMP_STRENGTH));
+    echo "Link Quality: "$TMP_STRENGTH;
     sleep 1;
 done
 QUALITY=$(( STRENGTH / COUNT  ));
