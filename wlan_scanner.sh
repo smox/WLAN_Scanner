@@ -20,7 +20,7 @@ usage()
 EOF
 }
 
-while getopts "hc:" OPTION
+while getopts "hc:a:" OPTION
 do
     case $OPTION in
         h)
@@ -29,6 +29,9 @@ do
             ;;
         c)
             COUNT=$OPTARG
+            ;;
+        a)
+            WLAN_ADAPTER=$OPTARG
             ;;
         ?)
             usage
