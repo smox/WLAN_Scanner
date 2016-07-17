@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COUNT=10;
+COUNT=20;
 WLAN_ADAPTER='wlan0';
 STRENGTH=0;
 
@@ -45,7 +45,7 @@ do
     TMP_STRENGTH=$(iwconfig $WLAN_ADAPTER | grep 'Signal level='|awk -F'=' '{ print $2 }' | awk -F'/' '{ print $1 }');
     STRENGTH=$(($STRENGTH+TMP_STRENGTH));
     echo "Link Quality: "$TMP_STRENGTH;
-    sleep 1;
+    sleep 0.5;
 done
 QUALITY=$(( STRENGTH / COUNT  ));
 echo "Average quality of "$WLAN_ADAPTER": "$QUALITY;
