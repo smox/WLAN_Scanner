@@ -48,4 +48,4 @@ do
     sleep 0.5;
 done
 QUALITY=$(( STRENGTH / COUNT  ));
-echo "Average quality of "$WLAN_ADAPTER": "$QUALITY;
+echo "Average quality of "$WLAN_ADAPTER": "$QUALITY"/70";
